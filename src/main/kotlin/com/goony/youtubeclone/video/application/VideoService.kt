@@ -8,6 +8,7 @@ import reactor.core.publisher.Flux
 class VideoService {
     fun getList(): Flux<VideoResponseDto> {
 
+        return Flux.just(VideoResponseDto.of())
     }
 
 }

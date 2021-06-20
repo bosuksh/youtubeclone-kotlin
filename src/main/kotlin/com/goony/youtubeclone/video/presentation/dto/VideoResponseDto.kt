@@ -9,5 +9,15 @@ data class VideoResponseDto(
     val thumbnail: String,
     val uploadDate: String
 ) {
-    companion object
+    companion object  {
+        fun of(
+            id: Long,
+            title: String,
+            viewCount: Int,
+            contentUrl: String,
+            channelName: String,
+            thumbnail: String,
+            uploadDate: String
+        ) = VideoResponseDto(id,title, viewCount, contentUrl, channelName, thumbnail, uploadDate)
+    }
 }
