@@ -6,7 +6,7 @@ data class VideoResponseDto(
     val viewCount: Int,
     val contentUrl: String,
     val channelName: String,
-    val thumbnail: String,
+    val thumbnailUrl: String,
     val uploadDate: String
 ) {
     companion object  {
@@ -16,8 +16,8 @@ data class VideoResponseDto(
             viewCount: Int,
             contentUrl: String,
             channelName: String,
-            thumbnail: String,
+            thumbnailUrl: String,
             uploadDate: String
-        ) = VideoResponseDto(id,title, viewCount, contentUrl, channelName, thumbnail, uploadDate)
+        ) = VideoResponseDto(id,title, viewCount, contentUrl, channelName, thumbnailUrl, uploadDate)
     }
 }

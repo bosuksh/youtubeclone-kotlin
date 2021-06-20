@@ -1,6 +1,6 @@
 package com.goony.youtubeclone.video.presentation.model
 
-import reactor.core.publisher.Flux
+import reactor.core.publisher.Mono
 
 data class Response<T>(val data: T) {
     companion object{
@@ -9,8 +9,8 @@ data class Response<T>(val data: T) {
     }
 }
 
-data class TotalElementResponse<T>(val data: Flux<T>, val totalCount: Long) {
+data class TotalElementResponse<T>(val data: Mono<List<T>>, val totalCount: Long) {
     companion object {
-        fun<T> of(data:Flux<T>, totalCount: Long) =  TotalElementResponse(data, totalCount)
+        fun<T> of(data:Mono<List<T>>, totalCount: Long) =  TotalElementResponse(data, totalCount)
     }
 }
