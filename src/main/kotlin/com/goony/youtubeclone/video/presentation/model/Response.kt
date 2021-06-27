@@ -7,7 +7,7 @@ data class Response<T>(val data: T) {
     }
 }
 
-data class TotalElementResponse<T>(val data: List<T>, val totalCount: Long) {
+data class TotalElementResponse<T>(val data: List<T>, val totalCount: Int) {
     companion object {
         fun<T> of(data: List<T>, totalCount: Int) =  TotalElementResponse(data, totalCount)
     }

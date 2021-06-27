@@ -2,13 +2,13 @@ package com.goony.youtubeclone.video.domain
 
 import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedDate
+import org.springframework.data.jpa.domain.support.AuditingEntityListener
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing
 import java.time.LocalDateTime
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
+import javax.persistence.*
 
 @Entity
+@EntityListeners(AuditingEntityListener::class)
 class Video(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,11 +30,10 @@ class Video(
 
 ) {
     @CreatedDate
-    lateinit var createDateTime: LocalDateTime
+    var createDateTime: LocalDateTime? = null
 
-    @CreatedDate
     @LastModifiedDate
-    lateinit var updateDateTime: LocalDateTime
+    var updateDateTime: LocalDateTime? = null
 
     enum class Status(val value: String) {
         OPEN("0"),

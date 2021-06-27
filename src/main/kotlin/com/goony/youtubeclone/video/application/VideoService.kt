@@ -13,6 +13,46 @@ import kotlin.streams.toList
 @Service
 class VideoService(private val videoRepository: VideoRepository) {
     fun getList(): List<VideoResponseDto> {
+        val videoList = listOf(
+            Video(
+                1,
+                "hi",
+                "hello",
+                30,
+                "https://goony.world.com",
+                "goonyworld",
+                "https://thumbnail.goonyworld.com",
+                Video.Status.OPEN),
+            Video(
+                2,
+                "hi",
+                "hello",
+                30,
+                "https://goony.world.com",
+                "goonyworld",
+                "https://thumbnail.goonyworld.com",
+                Video.Status.OPEN),
+            Video(
+                3,
+                "hi",
+                "hello",
+                30,
+                "https://goony.world.com",
+                "goonyworld",
+                "https://thumbnail.goonyworld.com",
+                Video.Status.OPEN),
+            Video(
+                4,
+                "hi",
+                "hello",
+                30,
+                "https://goony.world.com",
+                "goonyworld",
+                "https://thumbnail.goonyworld.com",
+                Video.Status.OPEN)
+        )
+        videoRepository.saveAll(videoList)
+        videoRepository.flush()
         return videoRepository
             .findAll()
             .stream()

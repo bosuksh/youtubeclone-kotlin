@@ -11,7 +11,7 @@ data class VideoResponseDto(
     val contentUrl: String,
     val channelName: String,
     val thumbnailUrl: String,
-    val uploadDate: LocalDateTime
+    val uploadDate: LocalDateTime?
 ) {
     companion object  {
         fun of(
@@ -31,7 +31,7 @@ data class VideoResponseDto(
             contentUrl = video.contentUrl,
             channelName = video.channelName,
             thumbnailUrl = video.thumbnail,
-            uploadDate = video.updateDateTime
+            uploadDate = video.createDateTime
         )
 
     }

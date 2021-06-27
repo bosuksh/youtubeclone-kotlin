@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController
 class VideoResource(
     private val videoService: VideoService
 ){
-
     @GetMapping("/api/videos")
     fun getVideoList() : TotalElementResponse<VideoResponseDto>{
         val videoList = videoService.getList()
