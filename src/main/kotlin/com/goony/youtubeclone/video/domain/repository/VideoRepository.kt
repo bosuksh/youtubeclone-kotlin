@@ -6,5 +6,4 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface VideoRepository : JpaRepository<Video, Long>{
-
 }
