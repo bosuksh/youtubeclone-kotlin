@@ -41,4 +41,9 @@ internal class VideoServiceTest {
             .expectNext(listOf())
             .verifyComplete()
     }
+
+    @Test
+    fun commit1() {
+
+    }
 }
